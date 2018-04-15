@@ -1,0 +1,88 @@
+Enoncé
+
+La pyramide de Sastantua est un exercice extrait de la piscine de l’école 42 que les candidat peuvent faire en bonus.
+
+Voici une pyramide de taille 5 :
+$ ./sastantua 5
+
+34+3                              /*\ 1
+                                 /***\ 3
+                                /*****\ 5    5 étoiles => +6
+                             /***********\  11 étoiles                              4
+                            /*************\
+                           /***************\
+                          /*****************\       17 étoiles => +6
+                       /***********************\    23 étoiles                      8
+                      /*************************\
+                     /***************************\
+                    /*****************************\
+                   /*******************************\    31 => +8
+               /***************************************\39                          14
+              /*****************************************\
+             /*******************************************\
+            /*********************************************\
+           /***********************************************\
+          /*************************************************\ 49 => +8
+      /*********************************************************\ 57                20
+     /***********************************************************\
+    /****************************|||||****************************\
+   /*****************************|||||*****************************\
+  /******************************|||$|******************************\
+ /*******************************|||||*******************************\
+/********************************|||||********************************\ => +10
+
+L’objectif du dojo est de coder le programme sastantua
+
+* Le nombre entré correspond au nombre d'étages
+* chaque ligne est commencée par un / et est terminée par \
+* le nombre d'étage minimum de la pyramide est 2 ? (n >= 1 ?)
+* Le nombre de ligne du niveau n est à n + 2
+* la porte mesure n * n
+* dans un niveau chaque ligne compte 2 étoiles de plus que la précédente
+* Toutes les deux changements de niveaux, on augmente le nombre d'étoiles entre les niveaux de 2
+
+
+
+
+
+     --/*\      5 = 2 + 3
+     -/***\     6 = 1 + 5
+     /**|**\    7 = 0 + 7
+
+porte :
+taille 1
+
+|
+
+taille 2
+
+||
+|$
+
+taille 3
+
+|||
+||$
+|||
+
+taille 4
+
+||||
+||$|
+||||
+
+taille 5
+
+|||||
+|||||
+|||$|
+|||||
+|||||
+
+* la porte est centrée pour les tailles impaires
+* le 1er caractere de la porte est le |
+* le second est le $
+* si taille 1 ou 2, la poignée est sur la 1ère ligne,
+    si taille 3 ou 4 , elle est sur la 2ème ligne,
+    si taille 5 ou 6, elle est sur la 3ème ligne
+* la poignée est toujours sur la colonne à droite du centre
